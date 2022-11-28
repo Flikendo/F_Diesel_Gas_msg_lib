@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option java_outer_classname = "FuelStationTub";
+
 // Types of fuels
 enum TypeFuel {
   TYPE_GAS_95 = 0;
