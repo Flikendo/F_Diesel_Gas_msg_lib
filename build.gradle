@@ -1,16 +1,6 @@
 plugins {
-	id 'java-library'
-	id 'maven-publish'
-	id 'org.springframework.boot' version '3.0.0'
-	id 'io.spring.dependency-management' version '1.1.0'
-}
-
-dependencies {
-	// https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
-	implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '4.0.0-rc-2'
-
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	id 'java'
+	id "com.google.protobuf" version "0.9.1"
 }
 
 group = 'com.flikendo'
@@ -21,18 +11,8 @@ repositories {
 	mavenCentral()
 }
 
-jar {
-	archiveClassifier = '' //use empty string
-}
+dependencies {
+	implementation 'com.google.protobuf:protobuf-java:3.11.0'
 
-publishing {
-	publications {
-		maven(MavenPublication) {
-			from components.java
-		}
-	}
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
+	testImplementation group: 'junit', name:'junit', version: '4.12'
 }

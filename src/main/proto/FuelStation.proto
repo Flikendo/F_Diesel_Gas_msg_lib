@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+//the java package must be commontypes.protobuffers
+option java_package = "com.flikendo.proto";
+
 option java_outer_classname = "FuelStationTub";
 
 // Types of fuels
