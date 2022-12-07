@@ -3,7 +3,7 @@
 This is a protobuf project which contains thoses clases to connect app to database.
 
 
-##Protobuf Plugin for Gradle
+## Protobuf Plugin for Gradle
 This info is taken from [Protobuf Plugin for Gradle](https://github.com/google/protobuf-gradle-plugin)
 
 The Gradle plugin that compiles Protocol Buffer (aka. Protobuf) definition files (*.proto) in your project. There are two pieces of its job:
