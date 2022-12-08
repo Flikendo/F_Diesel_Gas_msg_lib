@@ -1,5 +1,7 @@
 plugins {
-	id 'java'
+//	id 'java'
+	id 'java-library'
+	id 'maven-publish'
 	id "com.google.protobuf" version "0.9.1"
 }
 
@@ -12,7 +14,15 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.google.protobuf:protobuf-java:3.11.0'
+	implementation 'com.google.protobuf:protobuf-java:3.21.9'
+}
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from components.java
+		}
+	}
 }
 
 protobuf {
