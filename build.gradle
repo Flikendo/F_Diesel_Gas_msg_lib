@@ -13,8 +13,6 @@ repositories {
 
 dependencies {
 	implementation 'com.google.protobuf:protobuf-java:3.11.0'
-
-	testImplementation group: 'junit', name:'junit', version: '4.12'
 }
 
 protobuf {
@@ -23,4 +21,10 @@ protobuf {
 		// Download from repositories
 		artifact = 'com.google.protobuf:protoc:3.0.0'
 	}
+}
+
+task buildZip(type: Zip) {
+	from compileJava
+	from processResources
+	from configurations.runtimeClasspath
 }
