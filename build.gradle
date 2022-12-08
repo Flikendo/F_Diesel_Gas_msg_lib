@@ -23,7 +23,7 @@ protobuf {
 	}
 }
 
-task buildZip(type: Zip) {
+task zipDynLib(type: Zip) {
 	from compileJava
 	from processResources
 	from configurations.runtimeClasspath
