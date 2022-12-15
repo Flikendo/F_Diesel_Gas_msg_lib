@@ -17,10 +17,27 @@ dependencies {
 	implementation 'com.google.protobuf:protobuf-java:3.21.9'
 }
 
+// Task to create a Zip
+task zipDynLib(type: Zip) {
+	from compileJava
+	from processResources
+	from configurations.runtimeClasspath
+}
+
 publishing {
 	publications {
-		maven(MavenPublication) {
-			from components.java
+		// To publish JAR with compilated protos
+//		maven(MavenPublication) {
+//			from components.java
+//		}
+
+		// To publish a zip instead of a JAR with the compiled protos
+		ZipPublication(MavenPublication) {
+			artifact zipDynLib
+				pom {
+					version = version
+					groupId = group
+				}
 		}
 	}
 }
@@ -31,10 +48,4 @@ protobuf {
 		// Download from repositories
 		artifact = 'com.google.protobuf:protoc:3.0.0'
 	}
-}
-
-task zipDynLib(type: Zip) {
-	from compileJava
-	from processResources
-	from configurations.runtimeClasspath
 }
