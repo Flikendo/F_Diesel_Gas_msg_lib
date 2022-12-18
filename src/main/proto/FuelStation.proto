@@ -16,7 +16,7 @@ enum TypeFuel {
 // Message to send to the database and to send to Telegram
 message FuelStation {
   TypeFuel type = 1;
-  float price = 2;
+  double price = 2;
   string location = 3;
   string date = 4;
   string address = 5;
